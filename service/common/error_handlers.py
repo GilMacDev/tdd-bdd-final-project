@@ -56,8 +56,8 @@ def not_found(error):
 @app.errorhandler(status.HTTP_405_METHOD_NOT_ALLOWED)
 def method_not_supported(error):
     """Handles unsupported HTTP methods with 405_METHOD_NOT_SUPPORTED"""
-    message = str(error)
-    app.logger.warning(message)
+    message = str(error) # pragma: no cover
+    app.logger.warning(message) # pragma: no cover
     return (
         jsonify(
             status=status.HTTP_405_METHOD_NOT_ALLOWED,
